@@ -1,6 +1,6 @@
  /*
- EXP NO : 7.1
- TITLE : WAP TO FIND the largest element in an array
+ EXP NO : 7.2
+ TITLE : WAP TO calculate sum of two matrix
  NAME : PRATIK JAISWAR
  UIN :241S077
  Roll.No:59
