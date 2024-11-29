@@ -6,69 +6,36 @@
  Roll.No:59
  CLASS & DIV :F.E -ECS ENG(E3) */
 
- #include<stdio.h>
-
- //Prime Number function
- int isPrime_Num (int a, int b) {
-
- // Finding prime numbers
- for(int i=a+1; i< b; i++ )
- {
- if(i<2)
- {
- continue;
- }
- int prime=1;
-
- for(int j=2; j<i; j++)
- {
- if(i%j==0)
- {
- prime=0;
-
- break;
- }
- }
- if (prime==1)
- {
- printf("%d \t ", i);
-
- }
- }
- } // Prime Number function
- // main function
- int main()
- {
- int a,b;
-
- printf("\t\t\t***To Find the Prime Numbers between Two Numbers***\n\n");
-
- printf("Enter Two Numbers:\n");
-
- scanf("%d %d", &a, &b);
-
- //to check input is greater than 0
-
- if(a > 0 && b > 0)
- {
- printf("The Prime Numbers Between %d and %d are \n", a, b);
-
- isPrime_Num(a,b);
- }
- else
- printf("\nError:the number should be grater then 0\n");
-
- return 0;
- }
- /* OUTPUT
- ***To Find the Prime Numbers between Two Numbers***
-
- Enter Two Numbers:
- 1
- 50
- The Prime Numbers Between 1 and 50 are
- 2 3 5 7 11
- 13 17 19 23 29
- 31 37 41 43 47
- [Process completed - press Enter]
-
+ #include <stdio.h>
+int isPrime(int num){
+if (num < 2){
+return 0;
+}
+for (int i = 2; i * i <= num; i++){
+if (num % i == 0)
+{
+return 0;
+}
+}
+return 1;
+}
+void findPrimes(int start, int end){
+printf("Prime numbers between %d and %d are:\n", start, end);
+for (int i = start; i <= end; i++)
+{
+if (isPrime(i))
+{
+printf("%d ", i);
+}
+}
+printf("\n");
+}
+int main(){
+int start, end;
+printf("Enter the starting number: ");
+scanf("%d", &start);
+printf("Enter the ending number: ");
+scanf("%d", &end);
+findPrimes(start, end);
+return 0;
+}
